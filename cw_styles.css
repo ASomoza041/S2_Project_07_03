@@ -17,25 +17,155 @@
 
 
 /* Import Basic Design Styles  */
-
+/* The @import rule pulls in all style rules from a seperate stylesheet and impliments them to the linked page. */
+@import url("cw_designs.css");
 
 
 /* ===============================
 	General Styles for All Devices
    ===============================
 */
+/* The code below is for styles for all devices. The code is many style rules for the layout/look of the page it's linked to. */
+nav#bottom {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: row nowrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
 
+}
+
+nav#bottom>ul {
+    flex: 0 1 150px;
+}
 
 
 /* ===============================
 	Mobile Styles up to 480 pixels
    ===============================
 */
+/* The code below is for mobile devices, this means any device with a screen width below 481px. The code is many style rules for the layout/look of the page it's linked to when the screen width is below 481px. */
+@media only screen and (max-width: 480px) {
+    body {
+        background-color: rgb(51, 51, 51);
+        color: rgb(211, 211, 211);
+    }
 
+    aside,
+    section#spotlight,
+    article img {
+        display: none;
+    }
 
+    nav#top>ul {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex: row wrap;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 
+    nav#top>ul>li {
+        font-size: 2.2em;
+        flex: 1 1 130px;
+    }
+
+    nav#top ul li:nth-of-type(1) {
+        background-image: url("cw_image01.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    nav#top ul li:nth-of-type(2) {
+        background-image: url("cw_image02.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    nav#top ul li:nth-of-type(3) {
+        background-image: url("cw_image03.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    nav#top ul li:nth-of-type(4) {
+        background-image: url("cw_image04.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    nav#top ul li:nth-of-type(5) {
+        background-image: url("cw_image05.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    nav#top ul li:nth-of-type(6) {
+        background-image: url("cw_image06.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    p#links {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex: row nowrap;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    p#links>a {
+        color: white;
+        background-color: rgb(220, 27, 27);
+        border-radius: 20px;
+        border: 10px solid rgb(220, 27, 27);
+        text-decoration: none;
+    }
+}
 
 /* ============================================
 	Tablet and Desktop Devices: 481px or more 
    ============================================
 */
+/* The code below is for tablet and dektop devices, this means any device with a screen width above 480px. The code is many style rules for the layout/look of the page it's linked to when the screen width is above 480px. */
+@media only screen and (min-width: 481px) {
+    body {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex: row wrap;
+        flex-direction: row;
+        flex-wrap: wrap
+    }
+
+    article {
+        flex: 2 1 400px;
+    }
+
+    aside {
+        flex: 1 2 200px;
+    }
+
+    nav#top {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    nav#top>ul {
+        display: -webkit-flex;
+        display: flex;
+        background-color: rgb(51, 51, 51);
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav#top>ul>li {
+        flex: 0 1 80px;
+    }
+
+    p#links {
+        display: none;
+    }
+}
